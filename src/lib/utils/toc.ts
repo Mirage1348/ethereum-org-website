@@ -3,7 +3,7 @@ import { ListProps } from "@chakra-ui/react"
 import type { ToCItem, TocNodeType } from "@/lib/types"
 
 // RegEx patterns
-const customIdRegEx = /^.+(\s*\{#([^\}]+?)\}\s*)$/
+const customIdRegEx = /^.+(\s*\{#([^}]+?)\}\s*)$/
 const emojiRegEx = /<Emoji [^/]+\/>/g
 const h1RegEx = /mdx\("h1"/g
 
@@ -31,16 +31,14 @@ export const parseHeadingId = (heading: string): string => {
  */
 export const outerListProps: ListProps = {
   borderStart: "1px solid",
-  borderStartColor: "dropdownBorder",
+  borderStartColor: "body.medium",
   borderTop: 0,
   fontSize: "sm",
-  lineHeight: 1.6,
-  fontWeight: 400,
+  spacing: "2",
   m: 0,
   mt: 2,
   mb: 2,
   ps: 4,
-  pe: 1,
   pt: 0,
   sx: {
     // TODO: Flip to object syntax with `lg` token after completion of Chakra migration

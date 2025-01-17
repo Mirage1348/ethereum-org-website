@@ -4,7 +4,7 @@ description: ETHステーキングプールの始め方の概要
 lang: ja
 template: staking
 emoji: ":money_with_wings:"
-image: /staking/leslie-pool.png
+image: /images/staking/leslie-pool.png
 alt: プールで泳ぐサイのレスリー
 sidebarDepth: 2
 summaryPoints:
@@ -68,7 +68,7 @@ summaryPoints:
 
 この代替方法として、ERC-20のステーキングトークンを利用するプールを使用すると、オープンマーケットでトークンを取引でき、ステーキングポジションを売却することができます。実際にステーキングコントラクトからETHを取り除くことなく、効果的に「引き出す」ことができます。
 
-<ButtonLink to="/staking/withdrawals/">ステーキング引き出しの詳細</ButtonLink>
+<ButtonLink href="/staking/withdrawals/">ステーキング引き出しの詳細</ButtonLink>
 </ExpandableCard>
 
 <ExpandableCard title="取引所でのステーキングとは異なる点">

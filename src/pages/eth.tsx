@@ -12,7 +12,7 @@ import {
   UnorderedList,
 } from "@chakra-ui/react"
 
-import type { BasePageProps, ChildOnlyProp } from "@/lib/types"
+import type { BasePageProps, ChildOnlyProp, Lang } from "@/lib/types"
 
 import ActionCard from "@/components/ActionCard"
 import ButtonLink from "@/components/Buttons/ButtonLink"
@@ -32,15 +32,18 @@ import Text from "@/components/OldText"
 import PageMetadata from "@/components/PageMetadata"
 import { StandaloneQuizWidget } from "@/components/Quiz/QuizWidget"
 import Translation from "@/components/Translation"
+import { Divider } from "@/components/ui/divider"
 
+import { cn } from "@/lib/utils/cn"
 import { existsNamespace } from "@/lib/utils/existsNamespace"
 import { getLastDeployDate } from "@/lib/utils/getLastDeployDate"
+import { getLocaleTimestamp } from "@/lib/utils/time"
 import { getRequiredNamespacesForPage } from "@/lib/utils/translations"
 
-import eth from "@/public/eth.png"
-import ethCat from "@/public/eth-gif-cat.png"
-import defi from "@/public/finance_transparent.png"
-import ethereum from "@/public/what-is-ethereum.png"
+import eth from "@/public/images/eth.png"
+import ethCat from "@/public/images/eth-gif-cat.png"
+import defi from "@/public/images/finance_transparent.png"
+import ethereum from "@/public/images/what-is-ethereum.png"
 
 const Page = (props: ChildOnlyProp) => (
   <Flex
@@ -56,10 +59,6 @@ const Page = (props: ChildOnlyProp) => (
 
 const Content = (props: ChildOnlyProp) => (
   <Box w="full" px={8} py={4} {...props} />
-)
-
-const Divider = () => (
-  <Box my={16} mx={0} w="10%" h={1} backgroundColor="homeDivider" />
 )
 
 const GrayContainer = (props: ChildOnlyProp) => (
@@ -214,9 +213,12 @@ const CardContainer = (props: FlexProps) => (
 )
 
 const TokenCard = (props: ComponentProps<typeof HorizontalCard>) => (
-  <HorizontalCard minW="full" my={2} mx={0} borderRadius={0} {...props} />
+  <HorizontalCard
+    className={cn("mx-0 my-2 min-w-full rounded-none", props.className)}
+    emojiClassName="text-[5rem]"
+    {...props}
+  />
 )
-
 const TextDivider = () => (
   <Box
     w="10%"
@@ -239,28 +241,7 @@ const CentralColumn = (props: ChildOnlyProp) => (
 )
 
 const CentralActionCard = (props: ComponentProps<typeof ActionCard>) => (
-  <ActionCard
-    display={{ base: "block", sm: "flex" }}
-    flex="none"
-    my={8}
-    mx={0}
-    sx={{
-      ".action-card-image-wrapper": {
-        p: 4,
-        minW: { sm: "260px" },
-      },
-      ".action-card-content": {
-        display: { sm: "flex" },
-        justifyContent: { sm: "center" },
-        flexDirection: { sm: "column" },
-        ms: { sm: 4 },
-      },
-      p: {
-        mb: { sm: 0 },
-      },
-    }}
-    {...props}
-  />
+  <ActionCard className="my-8" imageWidth={260} {...props} />
 )
 
 export const getStaticProps = (async ({ locale }) => {
@@ -269,12 +250,16 @@ export const getStaticProps = (async ({ locale }) => {
   const contentNotTranslated = !existsNamespace(locale!, requiredNamespaces[2])
 
   const lastDeployDate = getLastDeployDate()
+  const lastDeployLocaleTimestamp = getLocaleTimestamp(
+    locale as Lang,
+    lastDeployDate
+  )
 
   return {
     props: {
       ...(await serverSideTranslations(locale!, requiredNamespaces)),
       contentNotTranslated,
-      lastDeployDate,
+      lastDeployLocaleTimestamp,
     },
   }
 }) satisfies GetStaticProps<BasePageProps>
@@ -379,7 +364,7 @@ const EthPage = () => {
       <PageMetadata
         title={t("page-eth-whats-eth-meta-title")}
         description={t("page-eth-whats-eth-meta-desc")}
-        image="/eth.png"
+        image="/images/eth.png"
       />
       <Content>
         <HeroContainer>
@@ -388,15 +373,16 @@ const EthPage = () => {
             <Slogan>{t("page-eth-currency-for-future")}</Slogan>
             <Subtitle>{t("page-eth-is-money")}</Subtitle>
             <SubtitleTwo>{t("page-eth-currency-for-apps")}</SubtitleTwo>
-            <EthPriceCard isLeftAlign={false} mb={8} />
-            <ButtonLink to="/get-eth/">
+            <EthPriceCard className="mb-8" />
+            <ButtonLink href="/get-eth/">
               {t("page-eth-button-buy-eth")}
             </ButtonLink>
           </Header>
           <Hero>
             <Image
               src={eth}
-              width={800}
+              // TODO: adjust value when the old theme breakpoints are removed (src/theme.ts)
+              sizes="(max-width: 768px) 100vw, 800px"
               alt={t("page-eth-whats-eth-hero-alt")}
               priority
             />
@@ -450,7 +436,7 @@ const EthPage = () => {
             </Text>
           </Box>
           <CentralActionCard
-            to="/what-is-ethereum/"
+            href="/what-is-ethereum/"
             title={t("page-eth-whats-ethereum")}
             description={t("page-eth-whats-ethereum-desc")}
             image={ethereum}
@@ -463,7 +449,7 @@ const EthPage = () => {
             </Text>
             <Text>{t("page-eth-underpins-desc-2")}</Text>
             <CentralActionCard
-              to="/defi/"
+              href="/defi/"
               title={t("page-eth-whats-defi")}
               description={t("page-eth-whats-defi-description")}
               image={defi}
@@ -507,8 +493,7 @@ const EthPage = () => {
           <Divider />
         </CentralColumn>
         <CalloutBanner
-          my={20}
-          mx={0}
+          className="mx-0 my-20"
           titleKey={"page-eth:page-eth-where-to-buy"}
           descriptionKey={"page-eth:page-eth-where-to-buy-desc"}
           image={ethCat}
@@ -516,7 +501,9 @@ const EthPage = () => {
           imageWidth={300}
         >
           <Box>
-            <ButtonLink to="/get-eth/">{t("page-eth-get-eth-btn")}</ButtonLink>
+            <ButtonLink href="/get-eth/">
+              {t("page-eth-get-eth-btn")}
+            </ButtonLink>
           </Box>
         </CalloutBanner>
       </Content>
@@ -550,7 +537,6 @@ const EthPage = () => {
               emoji={token.emoji}
               title={token.title}
               description={token.description}
-              emojiSize={5}
             />
           ))}
         </RightColumn>

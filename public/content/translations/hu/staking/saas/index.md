@@ -1,10 +1,10 @@
 ---
-title: Letétbe helyezés mint szolgáltatás
-description: Áttekintés a letéti alapok használatáról
+title: Staking, mint szolgáltatás
+description: Egy áttekintő a pooled ETH staking elkezdéséről
 lang: hu
 template: staking
 emoji: ":money_with_wings:"
-image: /staking/leslie-saas.png
+image: /images/staking/leslie-saas.png
 alt: Leslie, a rinocérosz a felhőkön lebeg.
 sidebarDepth: 2
 summaryPoints:
@@ -78,7 +78,7 @@ A letétek visszavonása a Shanghai/Capella frissítéssel vált elérhetővé 2
 
 A validátorok ki is léphetnek a funkciójukból, ami felszabadítja a fennálló ETH-összeget a visszavonáshoz. Azok a számlák, amelyek megadták a visszavonási címet és teljesítették a kilépési folyamatot, a teljes egyenleget megkapják az adott címre a következő validátor-ellenőrzésnél.
 
-<ButtonLink to="/staking/withdrawals/">Bővebben a letétbe helyezés visszavonásáról</ButtonLink>
+<ButtonLink href="/staking/withdrawals/">Bővebben a letétbe helyezés visszavonásáról</ButtonLink>
 </ExpandableCard>
 
 <ExpandableCard title="Mi történik, ha súlyos büntetést kapok (slashing)?" eventCategory="SaasStaking" eventName="clicked what happens if I get slashed">

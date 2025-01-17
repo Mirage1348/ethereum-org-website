@@ -72,7 +72,7 @@ Ehhez előbb [Verkle-fákat](/roadmap/verkle-trees/) kell bevezetni az Ethereum-
 
 A státusztalanság arra épül, hogy a blokképítők tárolják a teljes státuszadatot, így képesek olyan tanúkat készíteni, amit a blokk validálásához használnak. A többi csomópontnak nincs szüksége a státuszadatokra, minden szükséges információ benne van a tanúban. Ez egy olyan helyzet, amelyben a blokképítés drága, viszont a blokkellenőrzés olcsó tevékenység, így kevesebben fognak blokképítő csomópontokat működtetni. Ugyanakkor a blokképítők decentralizációja nem annyira kritikus téma, hogyha a lehető legtöbb résztvevő képes függetlenül részt venni a blokkok ellenőrzésében.
 
-<ButtonLink variant="outline-color" to="https://notes.ethereum.org/WUUUXBKWQXORxpFMlLWy-w#So-why-is-it-ok-to-have-expensive-proposers">Tudjon meg többet a témáról Dankrad jegyzeteiből</ButtonLink>
+<ButtonLink variant="outline-color" href="https://notes.ethereum.org/WUUUXBKWQXORxpFMlLWy-w#So-why-is-it-ok-to-have-expensive-proposers">Tudjon meg többet a témáról Dankrad jegyzeteiből</ButtonLink>
 </ExpandableCard>
 
 A blokképítők használják a státuszadatot a tanúk létrehozásához – ez egy minimális adathalmaz, mellyel ellenőrizhető a blokkban lévő tranzakciók által okozott státuszváltozás. A többi validátornak nincs szüksége a státuszra, csak a státuszgyökeret (a teljes státusz hashje) tárolják. Megkapják a blokkot és a tanút, és ezeket felhasználva frissítik a saját státuszgyökerüket. Ezáltal a validáló csomópont rendkívül könnyű lesz.
@@ -81,7 +81,7 @@ A gyenge státusztalanság a kutatás előrehaladott állapotában tart, de a be
 
 ### Erős státusztalanság {#strong-statelessness}
 
-Az erős státusztalanság megszűnteti azt, hogy bármelyik csomópontnak tárolnia kelljen a státuszadatot. Ehelyett a tranzakciókat a tanúkkal együtt küldik, amelyet a blokképítők aggregálnak. Így a blokképítők felelősek azért, hogy a szükséges státuszokat tárolják, hogy abból elkészítsék a tanúkat a releváns számlákra. A státuszhoz kapcsolódó felelősség szinte teljesen a felhasználókhoz kerül, mivel tanúkat és hozzáférési listákat küldenek arról, hogy milyen számlákkal és tárhelykulcsokkal kapcsolódnak. Ennek következtében rendkívül könnyű csomópontok működhetnek, viszont az okosszerződésekkel nehezebb lesz az interakciójuk.
+Az erős státusztalanság megszünteti azt, hogy bármelyik csomópontnak tárolnia kelljen a státuszadatot. Ehelyett a tranzakciókat a tanúkkal együtt küldik, amelyet a blokképítők aggregálnak. Így a blokképítők felelősek azért, hogy a szükséges státuszokat tárolják, hogy abból elkészítsék a tanúkat a releváns számlákra. A státuszhoz kapcsolódó felelősség szinte teljesen a felhasználókhoz kerül, mivel tanúkat és hozzáférési listákat küldenek arról, hogy milyen számlákkal és tárhelykulcsokkal kapcsolódnak. Ennek következtében rendkívül könnyű csomópontok működhetnek, viszont az okosszerződésekkel nehezebb lesz az interakciójuk.
 
 Az erős státusztalanságot vizsgálják a kutatók, de jelenleg nem valószínű, hogy része lesz az Ethereum ütemtervének – sokkal valószínűbb, hogy a gyenge státusztalanság elegendő az Ethereum skálázási igényekhez.
 

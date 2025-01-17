@@ -4,7 +4,7 @@ description: Az elosztott rendszerek konszenzusprotokolljainak és szerepeiknek 
 lang: hu
 ---
 
-A konszenzusmechanizmust gyakran használják arra, hogy proof-of-stake (letéti igazolás), proof-of-work (munkaigazolás) vagy proof-of-authority (jogosultságigazolás) protokollokra hivatkoznak. Ugyanakkor ezek csak a konszenzusmechanizmus elemei, amelyek megvédik azt a Sybil-támadásoktól (amikor valaki több személynek adja ki magát). A konszenzusmechanizmus elképzelések, protokollok és ösztönzők teljes halmaza, amely lehetővé teszi, hogy csomópontok elosztott kötege meg tudjon egyezni a blokklánc státuszáról.
+A konszenzusmechanizmust gyakran használják arra, hogy proof-of-stake (letéti igazolás), proof-of-work (munkaigazolás) vagy proof-of-authority (jogosultságigazolás) protokollokra hivatkoznak. Ugyanakkor ezek csak a konszenzusmechanizmus elemei, amelyek megvédik azt a [Sybil-támadásoktól](/glossary/#sybil-attack). A konszenzusmechanizmus elképzelések, protokollok és ösztönzők teljes halmaza, amely lehetővé teszi, hogy csomópontok elosztott kötege meg tudjon egyezni a blokklánc státuszáról.
 
 ## Előfeltételek {#prerequisites}
 
@@ -68,7 +68,7 @@ Tekintse meg az Ethereumon használt különféle konszenzusmechanizmusokat:
 
 A proof-of-work és proof-of-stake önmagukban nem konszenzusprotokollok, de az egyszerűség kedvéért gyakran így hivatkoznak rájuk. Ezek Sybil-ellenálló mechanizmusok és a blokkok létrehozójának kiválasztói; ezek segítségével lehet eldönteni, hogy ki a legutóbbi blokk kreálója. Egy másik fontos összetevő a láncválasztó (elágazásválasztó) algoritmus, amely lehetővé teszi a csomópontok számára, hogy egyetlen helyes blokkot válasszanak a lánc élére olyan esetekben, amikor több blokk van ugyanabban a pozícióban.
 
-A **Sybil-rezisztencia** azt méri, hogy egy protokoll hogyan viselkedik egy [Sybil-támadással](https://wikipedia.org/wiki/Sybil_attack) szemben. Sybil-támadás esetén egy felhasználó vagy csoport több felhasználónak adja ki magát. Az ilyen típusú támadásokkal szembeni ellenállás lényeges egy decentralizált blokkláncnál, és lehetővé teszi, hogy a bányászok és a validáltorok a befektetett erőforrások alapján egyenlő mértékben részesüljenek jutalomban. A proof-of-work és proof-of-stake mechanizmusok úgy védekeznek, hogy a felhasználóknak sok energiát kell ráfordítaniuk vagy sok biztosítékot kell nyújtaniuk. Ezek a védelmek gazdaságilag elrettentő erejűek a Sybil-támadásokkal szemben.
+A **Sybil-rezisztencia** azt méri, hogy egy protokoll hogyan viselkedik egy Sybil-támadással szemben. Az ilyen típusú támadásokkal szembeni ellenállás lényeges egy decentralizált blokkláncnál, és lehetővé teszi, hogy a bányászok és a validáltorok a befektetett erőforrások alapján egyenlő mértékben részesüljenek jutalomban. A proof-of-work és proof-of-stake mechanizmusok úgy védekeznek, hogy a felhasználóknak sok energiát kell ráfordítaniuk vagy sok biztosítékot kell nyújtaniuk. Ezek a védelmek gazdaságilag elrettentő erejűek a Sybil-támadásokkal szemben.
 
 A **láncválasztási szabály** dönti el, hogy melyik lánc a „helyes”. A Bitcoin a „leghosszabb lánc” szabályt alkalmazza, ami azt jelenti, hogy amelyik blokklánc a leghosszabb, azt a többi csomópont is elfogadja érvényesnek, és azzal dolgozik. A proof-of-work láncok esetében a leghosszabb láncot a lánc összesített proof-of-work nehézsége határozza meg. Korábban az Ethereum is a leghosszabb lánc szabályát használta; most a proof-of-stake mechanizmussal működik, egy frissített elágazásválasztó algoritmust fogadott el, amely a lánc „súlyát” méri. A súly a validátorok szavazatainak összege, súlyozva a validátorok letétbe helyezett ether-egyenlegével.
 
@@ -82,10 +82,11 @@ Az Ethereum a [Gasper](/developers/docs/consensus-mechanisms/pos/gasper/) nevű 
 - [A proof-of-work blokkláncok biztonságáról és teljesítményéről](https://eprint.iacr.org/2016/555.pdf)
 - [Bizánci hiba](https://en.wikipedia.org/wiki/Byzantine_fault)
 
-_Van olyan közösségi erőforrása, amely segített Önnek? Szerkessze ezt az oldalt, és adja hozzá!_
+_Ismersz olyan közösségi anyagot, amely segített neked? Módosítsd az oldalt és add hozzá!_
 
 ## Kapcsolódó témák {#related-topics}
 
 - [Proof-of-work](/developers/docs/consensus-mechanisms/pow/)
 - [Bányászat](/developers/docs/consensus-mechanisms/pow/mining/)
 - [Proof-of-stake](/developers/docs/consensus-mechanisms/pos/)
+- [Proof-of-authority (jogosultsági igazolás)](/developers/docs/consensus-mechanisms/poa/)

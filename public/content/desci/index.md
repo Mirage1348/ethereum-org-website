@@ -5,7 +5,7 @@ lang: en
 template: use-cases
 emoji: ":microscope:"
 sidebarDepth: 2
-image: /future_transparent.png
+image: /images/future_transparent.png
 alt: ""
 summaryPoint1: A global, open alternative to the current scientific system.
 summaryPoint2: Technology that enables scientists to raise funding, run experiments, share data, distribute insights, and more.
@@ -105,10 +105,11 @@ Explore projects and join the DeSci community.
 - [Bio.xyz: get funded for your biotech DAO or desci project](https://www.bio.xyz/)
 - [Fleming Protocol: open-source data economy that fuels collaborative biomedical discovery](http://flemingprotocol.io/)
 - [Active Inference Institute](https://www.activeinference.org/)
-- [CureDAO: Community-Owned Precision Health Platform](https://docs.curedao.org/)
 - [IdeaMarkets: enabling decentralized scientific credibility](https://ideamarket.io/)
 - [DeSci Labs](https://www.desci.com/)
 - [ValleyDAO: an open, global community offering funding and translational support for synthetic biology research](https://www.valleydao.bio)
+- [Cerebrum DAO: sourcing and nurturing solutions to advance brain health and prevent neurodegeneration](https://www.cerebrumdao.com/)
+- [CryoDAO: funding moonshot research in the field of cryopreservation](https://www.cryodao.org)
 
 We welcome suggestions for new projects to list - please look at our [listing policy](/contributing/adding-desci-projects/) to get started!
 
@@ -126,6 +127,7 @@ We welcome suggestions for new projects to list - please look at our [listing po
 - [DeSci: The Future of Research by Samuel Akinosho](https://lucidsamuel.medium.com/desci-the-future-of-research-b76cfc88c8ec)
 - [Science Funding (Epilogue: DeSci and new crypto primitives) by Nadia](https://nadia.xyz/science-funding)
 - [Decentralisation is Disrupting Drug Development](https://medium.com/id-theory/decentralisation-is-disrupting-drug-development-28b5ba5d447f)
+- [What Is DeSci – Decentralized Science?](​https://usadailytimes.com/2022/09/12/what-is-desci-decentralized-science/)
 
 ### Videos {#videos}
 
@@ -134,3 +136,4 @@ We welcome suggestions for new projects to list - please look at our [listing po
 - [Scientific Publishing Is Broken. Can Web3 Fix It?](https://www.youtube.com/watch?v=WkvzYgCvWj8)
 - [Juan Benet - DeSci, Independent Labs, & Large Scale Data Science](https://www.youtube.com/watch?v=zkXM9H90g_E)
 - [Sebastian Brunemeier - How DeSci Can Transform Biomedical Research & Venture Capital](https://www.youtube.com/watch?v=qB4Tc3FcVbM)
+- [Paige Donner - Tooling Open Science with Web3 & The Blockchain](https://www.youtube.com/watch?v=nC-2QWQ-lgw&t=17s)

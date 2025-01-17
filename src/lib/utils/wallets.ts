@@ -12,16 +12,20 @@ import {
   NEW_TO_CRYPTO_FEATURES,
   NFTS_FEATURES,
 } from "../constants"
-import { WalletData, WalletFilter } from "../types"
+import type { Lang, WalletData, WalletFilter } from "../types"
 
 export const getSupportedLocaleWallets = (locale: string) =>
   shuffle(
-    walletsData.filter((wallet) => wallet.languages_supported.includes(locale))
+    walletsData.filter((wallet) =>
+      wallet.languages_supported.includes(locale as Lang)
+    )
   )
 
 export const getNonSupportedLocaleWallets = (locale: string) =>
   shuffle(
-    walletsData.filter((wallet) => !wallet.languages_supported.includes(locale))
+    walletsData.filter(
+      (wallet) => !wallet.languages_supported.includes(locale as Lang)
+    )
   )
 
 // Get a list of a wallet supported Personas (new to crypto, nfts, long term, finance, developer)
@@ -65,21 +69,21 @@ export const getWalletPersonas = (wallet: WalletData) => {
 
 // Get a list of wallet supported languages with native title
 export const getSupportedLanguages = (
-  walletSupportedLanguages: string[],
+  supportedLanguageCodes: string[],
   locale: string
 ) => {
   const supportedLanguages = [] as string[]
 
   // current locale should appear first on the list, this manipulates the array to move it to the top if needed
   const supportsCurrentLocale = (current) => current === locale
-  const localeIndex = walletSupportedLanguages.findIndex(supportsCurrentLocale)
+  const localeIndex = supportedLanguageCodes.findIndex(supportsCurrentLocale)
 
   if (localeIndex >= 0) {
-    walletSupportedLanguages.splice(localeIndex, 1)
-    walletSupportedLanguages.unshift(locale)
+    supportedLanguageCodes.splice(localeIndex, 1)
+    supportedLanguageCodes.unshift(locale)
   }
 
-  walletSupportedLanguages.forEach((supportedLanguage) => {
+  supportedLanguageCodes.forEach((supportedLanguage) => {
     // Get supported language name
     const supportedLanguageName = getLanguageCodeName(supportedLanguage, locale)
     // Capitalize supported language name
@@ -90,25 +94,15 @@ export const getSupportedLanguages = (
 }
 
 // Format languages list to be displayed on UI label
-export const formatSupportedLanguages = (
-  supportedLanguages: string[],
-  sliceSize?: number
-) => {
-  return sliceSize
-    ? supportedLanguages.slice(0, sliceSize).join(", ")
-    : supportedLanguages.join(", ")
-}
-
-// Get border custom color for Persona filter
-export const getPersonaBorderColor = (selectedPersona: number, idx: number) => {
-  return selectedPersona === idx ? "primary.base" : "transparent"
+export const formatStringList = (strings: string[], sliceSize?: number) => {
+  return sliceSize ? strings.slice(0, sliceSize).join(", ") : strings.join(", ")
 }
 
 // Get total count of wallets that support a language
 const getLanguageTotalCount = (languageCode: string) => {
   return walletsData.reduce(
     (total, currentWallet) =>
-      currentWallet.languages_supported.includes(languageCode)
+      currentWallet.languages_supported.includes(languageCode as Lang)
         ? (total = total + 1)
         : total,
     0
@@ -188,4 +182,16 @@ export const walletsListingCount = (filters: WalletFilter) => {
     (acc, filter) => (filter ? acc + 1 : acc),
     0
   )
+}
+
+export const getLanguageCountWalletsData = (locale: string) => {
+  const languageCountWalletsData = getAllWalletsLanguages(locale).map(
+    (language) => ({
+      langCode: language.langCode,
+      count: getLanguageTotalCount(language.langCode),
+      name: getLanguageCodeName(language.langCode, locale),
+    })
+  )
+  languageCountWalletsData.sort((a, b) => a.name.localeCompare(b.name))
+  return languageCountWalletsData
 }

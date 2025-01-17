@@ -4,7 +4,7 @@ description: Gambaran umum mengenai bagaimana cara memulai penaruhan untuk ETH d
 lang: id
 template: staking
 emoji: ":money_with_wings:"
-image: /staking/leslie-pool.png
+image: /images/staking/leslie-pool.png
 alt: Leslie si Badak sedang berenang di kolam.
 sidebarDepth: 2
 summaryPoints:
@@ -68,7 +68,7 @@ Sekarang juga! Peningkatan jaringan Shanghai/Capella terjadi pada April 2023 dan
 
 Sebagai alternatif, pool yang menggunakan token penaruhan ERC-20 memungkinkan pengguna untuk memperdagangkan token ini di pasar terbuka, sehingga Anda dapat menjual posisi penaruhan Anda, secara efektif "menarik diri" tanpa benar-benar menghapus ETH dari kontrak penaruhan.
 
-<ButtonLink to="/staking/withdrawals/">Lebih lanjut tentang penarikan penaruhan</ButtonLink>
+<ButtonLink href="/staking/withdrawals/">Lebih lanjut tentang penarikan penaruhan</ButtonLink>
 </ExpandableCard>
 
 <ExpandableCard title="Apakah ini berbeda dari melakukan penaruhan dengan bursa saya?">

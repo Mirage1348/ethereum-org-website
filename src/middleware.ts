@@ -26,20 +26,37 @@ export const config = {
     "/", // explicit matcher for root route
     /*
      * Match all request paths except for the ones starting with:
-     * - api (API routes)
      * - _next/static (static files)
      */
-    "/((?!api|_next/static).*)",
+    "/((?!_next/static).*)",
   ],
 }
+
+const doubleLocaleRegex = new RegExp(`^/(${LOCALES_CODES.join("|")})/.*`, "i")
 
 // Middleware required to always display the locale prefix in the URL. It
 // redirects to the default locale if the locale is not present in the URL
 export async function middleware(req: NextRequest) {
-  const { pathname, locale } = req.nextUrl
+  const { pathname, locale, search } = req.nextUrl
 
-  if (pathname.startsWith("/_next") || PUBLIC_FILE.test(pathname)) {
-    return NextResponse.next()
+  if (
+    pathname.startsWith("/_next") ||
+    pathname.includes("/api/") ||
+    PUBLIC_FILE.test(pathname)
+  ) {
+    return
+  }
+
+  /**
+   * If an URL has double langs in the URL it leads to 500 error,
+   * e.g.: /ja/en/eth/
+   *
+   * It is a known bug:
+   * https://github.com/vercel/next.js/issues/52314
+   * https://github.com/vercel/next.js/issues/52316
+   */
+  if (doubleLocaleRegex.test(pathname)) {
+    return NextResponse.redirect(new URL(`/${DEFAULT_LOCALE}/404`, req.url))
   }
 
   if (locale === FAKE_LOCALE) {
@@ -48,7 +65,7 @@ export async function middleware(req: NextRequest) {
     const localeDetected = detectLocale(req.headers.get("accept-language"))
     const locale = localeDetected || DEFAULT_LOCALE
 
-    const redirectUrl = new URL(`/${locale}${pathname}`, req.url)
+    const redirectUrl = new URL(`/${locale}${pathname}${search}`, req.url)
 
     // Add trailing slash if it's not present
     if (!redirectUrl.pathname.endsWith("/")) {
@@ -57,6 +74,4 @@ export async function middleware(req: NextRequest) {
 
     return NextResponse.redirect(redirectUrl, { status: 301 })
   }
-
-  return NextResponse.next()
 }

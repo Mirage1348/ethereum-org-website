@@ -26,7 +26,7 @@ Az ether kriptovaluta segíti az árazási mechanizmust az Ethereum számítóg�
 
 Ezért még ha egy rosszindulatú dapp egy végtelen körforgást indítana is el, a tranzakció végül kifogyna az etherből és leállna, így a hálózat visszatér a normális állapotba.
 
-[Gyakori](https://www.reuters.com/article/us-crypto-currencies-lending-insight-idUSKBN25M0GP#:~:text=price%20of%20ethereum) [az, hogy](https://abcnews.go.com/Business/bitcoin-slumps-week-low-amid-renewed-worries-chinese/story?id=78399845#:~:text=cryptocurrencies%20including%20ethereum) [összekapcsolják](https://www.cnn.com/2021/03/14/tech/nft-art-buying/index.html#:~:text=price%20of%20ethereum) az Ethereumot és az ethert – amikor az emberek az Ethereum árára gondolnak, akkor az ethernek az árát értik rajta.
+[Gyakori az, hogy összekapcsolják](https://abcnews.go.com/Business/bitcoin-slumps-week-low-amid-renewed-worries-chinese/story?id=78399845) az Ethereumot és az ethert – amikor az emberek az Ethereum árára gondolnak, akkor az ethernek az árát értik alatta.
 
 ## Az ether létrehozása (minting) {#minting-ether}
 
@@ -75,4 +75,4 @@ Az [Etherscan](https://etherscan.io) egy népszerű eszköz arra, hogy egy webal
 - [Ethereum fehérkönyv](/whitepaper/): Az eredeti javaslat az Ethereum megalkotására. A jelen dokumentum az ether lényegét és a kialakításának célját írja le.
 - [Gwei-kalkulátor](https://www.alchemy.com/gwei-calculator): Használja ezt a gwei-kalkulátort, hogy könnyedén váltson wei, gwei és ether címleteket. Egyszerűen adja meg az összeget weiben, gweiben vagy ETH-ban, és automatikusan kiszámolja az átváltást.
 
-_Van olyan közösségi erőforrása, amely segített Önnek? Szerkessze ezt az oldalt, és adja hozzá!_
+_Ismersz olyan közösségi anyagot, mely segített neked? Módosítsd az oldalt és add hozzá!_

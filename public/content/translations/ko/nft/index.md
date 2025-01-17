@@ -5,7 +5,7 @@ lang: ko
 template: use-cases
 emoji: ":frame_with_picture:"
 sidebarDepth: 2
-image: /infrastructure_transparent.png
+image: /images/infrastructure_transparent.png
 alt: 홀로그램을 통해 표시되고 있는 ETH 로고.
 summaryPoint1: 이더리움 기반 자산으로 고유한 모든 것을 나타내는 방법입니다.
 summaryPoint2: NFT는 콘텐츠 창작자에게 그 어느 때보다도 더 많은 힘을 실어주고 있습니다.
@@ -86,7 +86,7 @@ NFT 스마트 계약은 다음과 같은 몇 가지 주요 작업을 수행할 �
 
 NFT와 관련된 보안 문제는 대부분 피싱 사기, 스마트 계약 취약점 또는 사용자의 실수(예: 실수로 개인 키 유출)와 관련 있기 때문에 NFT 소유자는 지갑의 보안을 강력하게 유지하는 것이 중요합니다.
 
-<ButtonLink to="/security/">
+<ButtonLink href="/security/">
   보안에 대한 추가 정보
 </ButtonLink>
 

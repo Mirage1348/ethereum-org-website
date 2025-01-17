@@ -26,7 +26,7 @@ Sono utilizzate diverse tecniche per modellizzare i contratti intelligenti per l
 
 I modelli di alto livello si concentrano sulla relazione tra contratti intelligenti e agenti esterni, come conti posseduti esternamente (EOA), conti di contratti e l'ambiente della blockchain. Tali modelli sono utili per definire le proprietà che specificano come un contratto dovrebbe comportarsi in risposta a determinate interazioni degli utenti.
 
-Al contrario, altri modelli formali si concentrano sul comportamento di basso livello di un contratto intelligente. Mentre i modelli di alto livello possono aiutare a ragionare sulla funzionalità di un contratto, potrebbero non riuscire a catturare i dettagli dei meccanismi interni dell'implementazione. I modelli di basso livello applicano una visualizzazione a scatola bianca per analizzare il programma e si affidano a rappresentazioni di basso livello delle applicazioni del contratto intelligente, quali tracce del programma e [grafici del flusso di controllo](https://en.wikipedia.org/wiki/Control-flow_graph), per ragionare sulle proprietà rilevanti alla sua esecuzione.
+Al contrario, altri modelli formali si concentrano sul comportamento di basso livello di un contratto intelligente. Sebbene i modelli di alto livello possano aiutare a ragionare sulla funzionalità di un contratto, potrebbero non riuscire a catturare i dettagli sui meccanismi interni dell'implementazione. I modelli di basso livello applicano una visualizzazione a scatola bianca per analizzare il programma e si affidano a rappresentazioni di basso livello delle applicazioni del contratto intelligente, quali tracce del programma e [grafici del flusso di controllo](https://en.wikipedia.org/wiki/Control-flow_graph), per ragionare sulle proprietà rilevanti alla sua esecuzione.
 
 I modelli di basso livello sono considerati ideali perché rappresentano l'effettiva esecuzione di un contratto intelligente nell'ambiente di esecuzione di Ethereum (cioè, l'[EVM](/developers/docs/evm/)). Le tecniche di modellizzazione di basso livello sono particolarmente utili nello stabilire le proprietà di sicurezza essenziali nei contratti intelligenti e nel rilevare le potenziali vulnerabilità.
 
@@ -78,7 +78,7 @@ Le specifiche in stile Hoare possono garantire la _correttezza parziale_ o la _c
 
 L'ottenimento della prova di correttezza totale è difficile, poiché alcune esecuzioni potrebbero tardare a terminare, o non terminare affatto. Detto ciò, il fatto che l'esecuzione termini è probabilmente una questione irrilevante, poiché il meccanismo di carburante di Ethereum impedisce i cicli infiniti del programma (l'esecuzione termina con esito positivo o a causa dell'errore 'carburante terminato').
 
-Le specifiche dei contratti intelligenti create utilizzando la logica di Hoare avranno precondizioni, postcondizioni e invarianti definite per l'esecuzione di funzioni e cicli in un contratto. Le precondizioni spesso includono la possibilità di input errati a una funzione, con le postcondizioni che descrivono la risposta prevista per tali input (es., generare un'eccezione specifica). In questo modo, le proprietà in stile Hoare sono efficaci per assicurare la correttezza delle implementazioni del contratto.
+Le specifiche dei contratti intelligenti create utilizzando la logica di Hoare avranno precondizioni, postcondizioni e invarianti definite per l'esecuzione di funzioni e cicli in un contratto. Le precondizioni spesso includono la possibilità di input errati a una funzione, con le postcondizioni che descrivono la risposta prevista per tali input (es., generare un'eccezione specifica). In questo modo le proprietà in stile Hoare sono efficaci per garantire la correttezza delle implementazioni del contratto.
 
 Molti quadri di verifica formale utilizzano le specifiche in stile Hoare per provare la correttezza semantica delle funzioni. Inoltre, è possibile aggiungere le proprietà in stile Hoare (come asserzioni) direttamente al codice del contratto utilizzando le istruzioni `require` e `assert` in Solidity.
 
@@ -229,7 +229,7 @@ Inoltre, non sempre per i verificatori di programmi è possibile determinare se 
 
 **Certora Prover** - _Certora Prover è uno strumento automatico di verifica formale per verificare la correttezza del codice nei contratti intelligenti. Le specifiche sono scritte in CVL (Certora Verification Language), con le violazioni di proprietà rilevate utilizzando una combinazione di analisi statica e risoluzione del vincolo._
 
-- [Sito Web](https://www.certora.com/)
+- [Sito web](https://www.certora.com/)
 - [Documentazione](https://docs.certora.com/en/latest/index.html)
 
 **SMTChecker di Solidity** - _*SMTChecker di Solidity è un revisore del modello integrato basato sulle SMT (Satisfiability Modulo Theories) e la risoluzione di Horn. Conferma se il codice sorgente di un contratto corrisponde alle specifiche durante la compilazione e controlla staticamente le violazioni delle proprietà di sicurezza.**
@@ -273,7 +273,7 @@ Inoltre, non sempre per i verificatori di programmi è possibile determinare se 
 - [GitHub](https://github.com/ConsenSys/mythril-classic)
 - [Documentazione](https://mythril-classic.readthedocs.io/en/develop/)
 
-## Letture consigliate {#further-reading}
+## Ulteriori letture {#further-reading}
 
 - [Come funziona la verifica formale dei contratti intelligenti](https://runtimeverification.com/blog/how-formal-verification-of-smart-contracts-works/)
 - [Come la verifica formale può assicurare contratti intelligenti impeccabili](https://media.consensys.net/how-formal-verification-can-ensure-flawless-smart-contracts-cbda8ad99bd1)

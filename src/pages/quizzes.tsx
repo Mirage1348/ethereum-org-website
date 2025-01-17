@@ -3,9 +3,9 @@ import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { FaGithub } from "react-icons/fa"
-import { Box, Flex, Icon, Stack, Text, useDisclosure } from "@chakra-ui/react"
+import { Box, Flex, Icon, Stack, Text } from "@chakra-ui/react"
 
-import { BasePageProps, QuizKey, QuizStatus } from "@/lib/types"
+import { BasePageProps, Lang, QuizKey, QuizStatus } from "@/lib/types"
 
 import { ButtonLink } from "@/components/Buttons"
 import FeedbackCard from "@/components/FeedbackCard"
@@ -21,13 +21,15 @@ import { useLocalQuizData } from "@/components/Quiz/useLocalQuizData"
 import { existsNamespace } from "@/lib/utils/existsNamespace"
 import { getLastDeployDate } from "@/lib/utils/getLastDeployDate"
 import { trackCustomEvent } from "@/lib/utils/matomo"
+import { getLocaleTimestamp } from "@/lib/utils/time"
 import { getRequiredNamespacesForPage } from "@/lib/utils/translations"
 
 import { ethereumBasicsQuizzes, usingEthereumQuizzes } from "@/data/quizzes"
 
 import { INITIAL_QUIZ } from "@/lib/constants"
 
-import HeroImage from "@/public/heroes/quizzes-hub-hero.png"
+import { useDisclosure } from "@/hooks/useDisclosure"
+import HeroImage from "@/public/images/heroes/quizzes-hub-hero.png"
 
 const handleGHAdd = () =>
   trackCustomEvent({
@@ -42,12 +44,16 @@ export const getStaticProps = (async ({ locale }) => {
   const contentNotTranslated = !existsNamespace(locale!, requiredNamespaces[2])
 
   const lastDeployDate = getLastDeployDate()
+  const lastDeployLocaleTimestamp = getLocaleTimestamp(
+    locale as Lang,
+    lastDeployDate
+  )
 
   return {
     props: {
       ...(await serverSideTranslations(locale!, requiredNamespaces)),
       contentNotTranslated,
-      lastDeployDate,
+      lastDeployLocaleTimestamp,
     },
   }
 }) satisfies GetStaticProps<BasePageProps>
@@ -60,7 +66,7 @@ const QuizzesHubPage: NextPage<
   const [userStats, updateUserStats] = useLocalQuizData()
   const [quizStatus, setQuizStatus] = useState<QuizStatus>("neutral")
   const [currentQuiz, setCurrentQuiz] = useState<QuizKey>(INITIAL_QUIZ)
-  const { onOpen, isOpen, onClose } = useDisclosure()
+  const { onOpen, isOpen, setValue } = useDisclosure()
 
   const commonQuizListProps = useMemo(
     () => ({
@@ -76,7 +82,7 @@ const QuizzesHubPage: NextPage<
       <PageMetadata
         title={t("common:quizzes-title")}
         description={t("quizzes-subtitle")}
-        image="/heroes/quizzes-hub-hero.png"
+        image="/images/heroes/quizzes-hub-hero.png"
       />
       <HubHero
         title={t("common:quizzes-title")}
@@ -86,7 +92,7 @@ const QuizzesHubPage: NextPage<
       />
       <QuizzesModal
         isQuizModalOpen={isOpen}
-        onQuizModalClose={onClose}
+        onQuizModalOpenChange={setValue}
         quizStatus={quizStatus}
       >
         <QuizWidget

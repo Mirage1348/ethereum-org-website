@@ -3,7 +3,7 @@ title: ビーコンチェーン
 description: ビーコンチェーン - プルーフ・オブ・ステークのイーサリアム導入アップグレード
 lang: ja
 template: upgrade
-image: /upgrades/core.png
+image: /images/upgrades/core.png
 alt:
 summaryPoint1: イーサリアムエコシステムにプルーフ・オブ・ステークの導入を可能にしたのが、ビーコンチェーンです。
 summaryPoint2: 2022年9月にプルーフ・オブ・ワーク・チェーンのイーサリアムとマージ(統合)されました。
@@ -56,7 +56,7 @@ summaryPoint3: ビーコンチェーンは、コンセンサスロジックと�
 
 当初、ビーコンチェーンはイーサリアムメインネットと別々に存在していましたが2022年に統合されました。
 
-<ButtonLink to="/roadmap/merge/">
+<ButtonLink href="/roadmap/merge/">
   マージ
 </ButtonLink>
 
@@ -64,7 +64,7 @@ summaryPoint3: ビーコンチェーンは、コンセンサスロジックと�
 
 シャーディングは、プルーフ・オブ・ステークの合意メカニズムがあって、初めてイーサリアムのエコシステムに導入することができます。 ビーコンチェーンによりステーキングが可能となり、メインネットとの「マージ」により、将来イーサリアムを拡張するためのシャーディングへの布石を、ビーコンチェーンは導入しました。
 
-<ButtonLink to="/roadmap/danksharding/">
+<ButtonLink href="/roadmap/danksharding/">
   シャードチェーン
 </ButtonLink>
 

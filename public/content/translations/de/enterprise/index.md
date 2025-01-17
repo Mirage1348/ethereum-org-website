@@ -68,7 +68,6 @@ Verschiedene Organisationen unternahmen gemeinsame Anstrengungen, um Ethereum un
 - [Ernst & Youngs 'Nightfall'](https://github.com/EYBlockchain/nightfall) _ein Toolkit für private Transaktionen_
 - [EthSigner](https://github.com/ConsenSys/ethsigner) _eine Transaktionssignierungsanwendung zur Verwendung mit einem Web3-Anbieter_
 - [Tenderly](https://tenderly.co/) _, eine Datenplattform, die Echtzeit-Analysen, Alarmierung und Überwachung mit Unterstützung für private Netzwerke bereitstellt_
-- [Truffle Suite](https://trufflesuite.com) _Blockchain Development Suite (Truffle, Ganache, Drizzle)_
 
 ### Skalierungslösungen {#scalability-solutions}
 
@@ -85,7 +84,7 @@ Beispiele für L2-Lösungen, die produktionsbereit sind oder es bald sein werden
 - ZK-Rollups (Daten on-chain, ZK-Gültigkeitsnachweise)
   - [Loopring](https://loopring.org)
   - [Starkware](https://starkware.co)
-  - [Matter Labs zkSync](https://matter-labs.io/)
+  - [Matter Labs ZKsync](https://matter-labs.io/)
   - [Aztec 2.0](https://aztec.network/)
 - Validium (Daten off-chain, ZK-Gültigkeitsnachweise)
   - [Starkware](https://starkware.co)

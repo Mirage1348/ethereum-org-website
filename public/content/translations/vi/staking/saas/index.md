@@ -1,10 +1,10 @@
 ---
 title: Đặt cọc như là một dịch vụ
-description: Tổng quan về cách đặt cọc ETH theo nhóm
+description: Tổng quan về cách bắt đầu với đặt cược ETH nhóm
 lang: vi
 template: staking
 emoji: ":money_with_wings:"
-image: /staking/leslie-saas.png
+image: /images/staking/leslie-saas.png
 alt: Tê giác Leslie lơ lửng giữa những đám mây.
 sidebarDepth: 2
 summaryPoints:
@@ -29,7 +29,7 @@ Giao thức Ethereum nguyên bản không hỗ trợ ủy quyền đặt cọc, 
 
 <StakingComparison page="saas" />
 
-## Điều cần cân nhắc {#what-to-consider}
+## Điều gì cần phải cân nhắc {#what-to-consider}
 
 Ngày càng nhiều nhà cung cấp dịch vụ SaaS ra đời để hỗ trợ đặt cọc ETH, nhưng mỗi nhà cung cấp đều có những lợi ích và rủi ro nhất định. So với tự đặt cọc, tất cả tùy chọn SaaS đòi hỏi bạn phải đặt niềm tin vào nhà cung cấp. Các tùy chọn Saas có thể bổ sung thêm đoạn mã bao bọc các máy khách Ethereum, nhưng đoạn mã này không được công khai hoặc không thể kiểm tra được. SaaS cũng ảnh hưởng tiêu cực đến tính phi tập trung của mạng lưới. Tùy thuộc vào thiết lập, bạn có thể không kiểm soát được nút xác thực của mình. Nhà điều hành có thể không trung thực và sử dụng ETH của bạn.
 
@@ -55,7 +55,7 @@ Vui lòng lưu ý tầm quan trọng của [máy khách đa dạng](/developers/
 
 Bạn có đề xuất nào về một nhà cung cấp tùy chọn đặt cọc dưới dạng dịch vụ mà chúng tôi còn thiếu không? Hãy xem [chính sách danh sách sản phẩm](/contributing/adding-staking-products/) của chúng tôi để xem liệu nó có phù hợp hay không và gửi nó để được xem xét.
 
-## Frequently asked questions {#faq}
+## Những câu hỏi thường gặp {#faq}
 
 <ExpandableCard title="Ai giữ khóa của tôi?" eventCategory="SaasStaking" eventName="clicked who holds my keys">
 Các thỏa thuận sẽ khác nhau giữa các nhà cung cấp, nhưng thông thường, bạn sẽ được hướng dẫn cách thiết lập bất kỳ khóa ký nào bạn cần (một khóa trên 32 ETH) và tải chúng lên nhà cung cấp để cho phép họ xác thực thay mặt bạn. Chỉ riêng các khóa ký không cung cấp khả năng rút, chuyển hoặc chi tiêu tiền của bạn. Tuy nhiên, chúng giúp bạn bỏ phiếu theo hướng đồng thuận, mà nếu không thực hiện đúng cách có thể dẫn đến các hình phạt ngoại tuyến hoặc bị cắt số Eth đã góp.
@@ -78,7 +78,7 @@ Tính năng rút tiền đặt cọc đã được triển khai trong bản nân
 
 Nút xác thực cũng có thể hoàn toàn rời khỏi vai trò nút xác thực, dẫn đến số dư ETH còn lại được mở khóa để rút. Tài khoản đã cung cấp địa chỉ rút tiền trên lớp thực thi và hoàn thành quy trình thoát sẽ nhận được toàn bộ số dư vào địa chỉ rút đã cung cấp trong lần quét nút xác thực tiếp theo.
 
-<ButtonLink to="/staking/withdrawals/">Thông tin thêm về rút tiền đặt cọc</ButtonLink>
+<ButtonLink href="/staking/withdrawals/">Thông tin thêm về rút tiền đặt cọc</ButtonLink>
 </ExpandableCard>
 
 <ExpandableCard title="Điều gì xảy ra nếu tôi bị cắt giảm nút xác thực?" eventCategory="SaasStaking" eventName="clicked what happens if I get slashed">

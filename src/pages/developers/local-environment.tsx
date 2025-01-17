@@ -9,7 +9,7 @@ import {
   UnorderedList,
 } from "@chakra-ui/react"
 
-import { BasePageProps, ChildOnlyProp } from "@/lib/types"
+import { BasePageProps, ChildOnlyProp, Lang } from "@/lib/types"
 import { Framework } from "@/lib/interfaces"
 
 import FeedbackCard from "@/components/FeedbackCard"
@@ -21,13 +21,14 @@ import PageMetadata from "@/components/PageMetadata"
 import ProductCard from "@/components/ProductCard"
 import Translation from "@/components/Translation"
 
+import { dataLoader } from "@/lib/utils/data/dataLoader"
 import { existsNamespace } from "@/lib/utils/existsNamespace"
 import { getLastDeployDate } from "@/lib/utils/getLastDeployDate"
-import { runOnlyOnce } from "@/lib/utils/runOnlyOnce"
+import { getLocaleTimestamp } from "@/lib/utils/time"
 import { getRequiredNamespacesForPage } from "@/lib/utils/translations"
 
 import { getLocalEnvironmentFrameworkData } from "@/lib/api/ghRepoData"
-import EthBlocksImage from "@/public/developers-eth-blocks.png"
+import EthBlocksImage from "@/public/images/developers-eth-blocks.png"
 
 const Content = ({ children }: ChildOnlyProp) => {
   return (
@@ -52,13 +53,13 @@ const Column = ({ children }: ChildOnlyProp) => {
   )
 }
 
+const loadData = dataLoader([
+  ["frameworksListData", getLocalEnvironmentFrameworkData],
+])
+
 type Props = BasePageProps & {
   frameworksList: Framework[]
 }
-
-const cachedFetchLocalEnvironmentFrameworkData = runOnlyOnce(
-  getLocalEnvironmentFrameworkData
-)
 
 export const getStaticProps = (async ({ locale }) => {
   const requiredNamespaces = getRequiredNamespacesForPage(
@@ -67,16 +68,20 @@ export const getStaticProps = (async ({ locale }) => {
 
   const contentNotTranslated = !existsNamespace(locale!, requiredNamespaces[2])
 
-  const frameworksListData = await cachedFetchLocalEnvironmentFrameworkData()
+  const [frameworksListData] = await loadData()
 
   const lastDeployDate = getLastDeployDate()
+  const lastDeployLocaleTimestamp = getLocaleTimestamp(
+    locale as Lang,
+    lastDeployDate
+  )
 
   return {
     props: {
       ...(await serverSideTranslations(locale!, requiredNamespaces)),
       contentNotTranslated,
       frameworksList: frameworksListData,
-      lastDeployDate,
+      lastDeployLocaleTimestamp,
     },
   }
 }) satisfies GetStaticProps<Props>

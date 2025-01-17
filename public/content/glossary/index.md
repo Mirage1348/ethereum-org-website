@@ -292,6 +292,8 @@ lang: en
 
 <GlossaryDefinition term="message-call" />
 
+<GlossaryDefinition term="mev" />
+
 <GlossaryDefinition term="mining" />
 
 <GlossaryDefinition term="miner" />
@@ -419,6 +421,8 @@ lang: en
 <GlossaryDefinition term="state-channels" />
 
 <GlossaryDefinition term="supermajority" />
+
+<GlossaryDefinition term="sybil-attack" />
 
 <GlossaryDefinition term="syncing" />
 

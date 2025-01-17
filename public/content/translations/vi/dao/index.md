@@ -5,7 +5,7 @@ lang: vi
 template: use-cases
 emoji: ":handshake:"
 sidebarDepth: 2
-image: /use-cases/dao-2.png
+image: /images/use-cases/dao-2.png
 alt: Đại diện cho biểu quyết của tổ chức tự trị phi tập trung (DAO) đối với một đề xuất.
 summaryPoint1: Các cộng đồng được sở hữu bởi thành viên mà không cần sự lãnh đạo tập trung.
 summaryPoint2: Một cách an toàn để hợp tác với những người lạ trên Internet.
@@ -50,7 +50,7 @@ Phần cốt lõi của một tổ chức tự trị phi tập trung (DAO) là c
 
 Cách tổ chức này là có thể vì những hợp đồng thông minh trở nên không thể bị thay đổi một khi chúng đã được kích hoạt trên Ethereum. Bạn không thể chỉnh sửa những đoạn mã trong hợp đồng (những điều luật của DAO) mà không bị người khác phát hiện vì tất cả đều được công khai.
 
-<DocLink to="/smart-contracts/">
+<DocLink href="/smart-contracts/">
   Hiểu thêm về những hợp đồng thông minh
 </DocLink>
 

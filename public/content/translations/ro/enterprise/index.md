@@ -67,7 +67,6 @@ Diverse organizații au depus eforturi comune pentru a creşte uşurinţa de uti
 - [Ernst & Young's „Nightfall”](https://github.com/EYBlockchain/nightfall) _un set de instrumente pentru tranzacții private_
 - [EthSigner](https://github.com/ConsenSys/ethsigner) _o aplicație de semnare a tranzacțiilor de utilizat cu un furnizor web3_
 - [Tenderly](https://tenderly.co/) _o platformă de date care oferă analize, alerte și monitorizare în timp real, ce acceptă rețelele private._
-- [Truffle Suite](https://trufflesuite.com) _ suită de blockchain-uri pentru dezvoltare (Truffle, Ganache, Drizzle)_
 
 ### Soluții de scalabilitate {#scalability-solutions}
 
@@ -84,7 +83,7 @@ Câteva exemple de soluții de Nivelul 2 care sunt pregătite pentru producție 
 - ZK-rollup-uri (date pe lanț, dovezi de validitate ZK)
   - [Loopring](https://loopring.org)
   - [Starkware](https://starkware.co)
-  - [Matter Labs zkSync](https://matter-labs.io/)
+  - [Matter Labs ZKsync](https://matter-labs.io/)
   - [Aztec 2.0](https://aztec.network/)
 - Validium (date în afara lanțului, dovezi de validitate ZK)
   - [Starkware](https://starkware.co)

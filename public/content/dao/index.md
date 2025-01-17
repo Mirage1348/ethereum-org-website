@@ -1,11 +1,12 @@
 ---
-title: Decentralized autonomous organizations (DAOs)
+title: What is a DAO?
+metaTitle: What is a DAO? | Decentralized Autonomous Organization
 description: An overview of DAOs on Ethereum
 lang: en
 template: use-cases
 emoji: ":handshake:"
 sidebarDepth: 2
-image: /use-cases/dao-2.png
+image: /images/use-cases/dao-2.png
 alt: A representation of a DAO voting on a proposal.
 summaryPoint1: Member-owned communities without centralized leadership.
 summaryPoint2: A safe way to collaborate with internet strangers.
@@ -160,3 +161,7 @@ _Typically used for decentralized development and governance of protocols and [d
 
 - [What is a DAO in crypto?](https://youtu.be/KHm0uUPqmVE)
 - [Can a DAO Build a City?](https://www.ted.com/talks/scott_fitsimones_could_a_dao_build_the_next_great_city) – [TED](https://www.ted.com/)
+
+<Divider />
+
+<QuizWidget quizKey="daos" />

@@ -3,7 +3,7 @@ title: الدمج
 description: تعرّف على الدمج - عندما تبنت الشبكة الرئيسية إثيريوم إثبات الحصة.
 lang: ar
 template: upgrade
-image: /upgrades/merge.png
+image: /images/upgrades/merge.png
 alt: 
 summaryPoint1: تستخدم الشبكة الرئيسية لإثيريوم إثبات الحصة، بيد أن ذلك ليس الوضع دائمًا.
 summaryPoint2: كان يُطلق على عملية التطوير من آلية إثبات العمل الأصلية إلى إثبات الحصة اسم الدمج.
@@ -199,7 +199,7 @@ contentPreview="False. Validator exits are rate limited for security reasons.">
 
 وتُقدم الكتل عوضًا عن ذلك باستخدام التحقق من صحة العُقد التي جمدت الإثيريوم مقابل الحق في المشاركة في إجماع الآراء. كما مهدت هذه التحديثات السبيل نحو رفع مستوى القابلية للترقيات، بما في ذلك التقسيم والتوزيع.
 
-<ButtonLink to="/roadmap/beacon-chain/">
+<ButtonLink href="/roadmap/beacon-chain/">
   سلسلة المنارة
 </ButtonLink>
 
@@ -215,7 +215,7 @@ contentPreview="False. Validator exits are rate limited for security reasons.">
 
 كما تتطور خطط التقسيم والتوزيع بسرعة، ولكن نظرًا لظهور ونجاح تكنولوجيات الطبقة 2 في توسيع نطاق تنفيذ المعاملات، فقد تحولت خطط التقسيم والتوزيع إلى إيجاد أفضل طريقة لتوزيع عبء تخزين بيانات المكالمات المضغوطة من العقود المتراكمة والسماح بالنمو الأسي في سَعَة الشبكة. حيث لن يحدث ذلك دون الانتقال أولاً إلى مرحلة إثبات الحصة.
 
-<ButtonLink to="/roadmap/danksharding/">
+<ButtonLink href="/roadmap/danksharding/">
   التقسيم
 </ButtonLink>
 

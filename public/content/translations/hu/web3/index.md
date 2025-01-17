@@ -63,7 +63,7 @@ A Web3 közvetlen tulajdonjogot ad [nem helyettesíthető tokenek (NFT)](/glossa
 
 <InfoBanner shouldSpaceBetween emoji=":eyes:">
   <div>Tudjon meg többet az NFT-kről</div>
-  <ButtonLink to="/nft/">
+  <ButtonLink href="/nft/">
     Bővebben az NFT-kről
   </ButtonLink>
 </InfoBanner>
@@ -88,8 +88,8 @@ Ugyanakkor számos Web3-közösséget is DAO-ként definiálnak. Ezek a közöss
 
 <InfoBanner shouldSpaceBetween emoji=":eyes:">
   <div>Tudjon meg többet a DAO-król</div>
-  <ButtonLink to="/dao/">
-    Bővebben a DAO-król
+  <ButtonLink href="/dao/">
+    További információk a DAO-król
   </ButtonLink>
 </InfoBanner>
 
@@ -103,7 +103,7 @@ A Web3 megoldja ezeket a problémákat azáltal, hogy lehetővé teszi digitáli
 
 A web2 fizetési infrastruktúra a bankokra és fizetési szolgáltatókra támaszkodik, kizárva azokat, akik nem rendelkeznek bankszámlával, vagy éppen nem olyan országban élnek. A Web3 tokeneket használ, mint amilyen az [ETH](/glossary/#ether), hogy közvetlen módon tudjon pénzt küldeni, és nem kell hozzá harmadik fél.
 
-<ButtonLink to="/eth/">
+<ButtonLink href="/eth/">
   Többet az ETH-ről
 </ButtonLink>
 
@@ -140,7 +140,7 @@ Ez még csak a kezdete annak, hogy az internet jobbá váljon a Web3-mal, és ah
 - [Tárca szerzése](/wallets/)
 - [Találjon egy közösséget](/community/)
 - [Fedezze fel a Web3-alkalmazásokat](/dapps/)
-- [Csatlakozzon egy DAO-hoz](/dao/)
+- [DAO-hoz csatlakozás](/dao/)
 - [Építsen a Web3-ra](/developers/)
 
 ## További olvasnivaló {#further-reading}
